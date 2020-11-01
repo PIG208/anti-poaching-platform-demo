@@ -1,22 +1,33 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <Main>
+    <router-view></router-view>
+  </Main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Main from './layout/Main'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Main
   }
 }
 </script>
 
 <style>
+@import "./assets/css/font-awesome.min.css";
+body {
+  margin: 0;
+}
+:root {
+  --header-height: 2.2rem;
+  --header-font-size: 2rem;
+  --header-vert-padding: 1.5rem;
+  --main-padding: 3rem;
+  --footer-height: 1.5rem;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

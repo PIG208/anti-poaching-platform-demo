@@ -1,8 +1,25 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from './App'
+import Home from './pages/Home'
+import Search from './pages/Search'
+import Error from './pages/Error'
+import VueRouter from 'vue-router'
 
-Vue.config.productionTip = false
+const routes = [
+  { path: '/home', component: Home },
+  { path: '/search', component: Search },
+  { path: '/error', component: Error }
+]
+
+const router = new VueRouter({
+  mode: 'history',
+  routes: routes
+})
+
+Vue.use(VueRouter)
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  el: '#app',
+  router: router,
+  render: h => h(App)
+})
